@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Playlist Maker</string>
+    <string name="title_activity_favourites">Избранное</string>
+    <string name="search">Поиск</string>
+    <string name="favorite">Избранное</string>
+    <string name="title_activity_settings">Настройки</string>
+    <string name="title_activity_search">Поиск</string>
+    <string name="playlist_play">Плейлисты</string>
+    <string name="settings">Настройки</string>
+</resources>

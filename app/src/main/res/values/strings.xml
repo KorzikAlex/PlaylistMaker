@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Playlist Maker</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="title_activity_favourites">Favourites</string>
+    <string name="search">Search</string>
+    <string name="favorite">Favourite</string>
+    <string name="playlist_play">Playlists</string>
+    <string name="settings">Settings</string>
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Paddings -->
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">16dp</dimen>
+    <dimen name="padding_large">24dp</dimen>
+
+    <!-- Item / row spacing -->
+    <dimen name="list_item_horizontal_padding">16dp
+    </dimen>
+    <dimen name="list_item_vertical_padding">12dp</dimen>
+    <dimen name="list_item_gap">12dp</dimen>
+
+    <!-- Icon / avatar sizes -->
+    <dimen name="icon_size">24dp</dimen>
+    <dimen name="avatar_size">40dp</dimen>
+
+    <!-- Buttons / controls -->
+    <dimen name="button_height">48dp</dimen>
+
+    <!-- App bar / toolbars -->
+    <dimen name="top_app_bar_height">56dp</dimen>
+
+    <!-- Shapes / corners -->
+    <dimen name="corner_radius_small">8dp</dimen>
+    <dimen name="corner_radius_medium">12dp</dimen>
+    <dimen name="corner_radius_large">16dp</dimen>
+
+    <!-- Other UI sizes -->
+    <dimen name="card_elevation">4dp</dimen>
+    <dimen name="avatar_inner_padding">4dp</dimen>
+</resources>
