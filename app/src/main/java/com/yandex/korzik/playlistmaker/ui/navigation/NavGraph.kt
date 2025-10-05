@@ -5,6 +5,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.yandex.korzik.playlistmaker.ui.screens.FavouritesScreen
 import com.yandex.korzik.playlistmaker.ui.screens.MainScreen
 import com.yandex.korzik.playlistmaker.ui.screens.PlaylistsScreen
@@ -20,22 +21,25 @@ sealed class Screen(val route: String) {
 }
 
 @Composable
-fun AppNavGraph(navController: NavHostController) {
-    NavHost(navController = navController, startDestination = Screen.Main.route) {
+fun AppNavGraph(
+    navHostController: NavHostController = rememberNavController(),
+    startDestination: Screen = Screen.Main
+) {
+    NavHost(navController = navHostController, startDestination = startDestination.route) {
         composable(route = Screen.Main.route) {
-            MainScreen(navController = navController, modifier = Modifier)
+            MainScreen(navController = navHostController, modifier = Modifier)
         }
         composable(route = Screen.Settings.route) {
-            SettingsScreen(navController = navController, modifier = Modifier)
+            SettingsScreen(navController = navHostController, modifier = Modifier)
         }
         composable(route = Screen.Playlists.route) {
-            PlaylistsScreen(navController = navController, modifier = Modifier)
+            PlaylistsScreen(navController = navHostController, modifier = Modifier)
         }
         composable(route = Screen.Favourites.route) {
-            FavouritesScreen(navController = navController, modifier = Modifier)
+            FavouritesScreen(navController = navHostController, modifier = Modifier)
         }
         composable(route = Screen.Search.route) {
-            SearchScreen(navController = navController, modifier = Modifier)
+            SearchScreen(navController = navHostController, modifier = Modifier)
         }
     }
 }

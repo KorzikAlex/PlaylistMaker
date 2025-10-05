@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
-class PlaylistMakerViewModel: ViewModel() {
+class PlaylistMakerViewModel : ViewModel() {
     private val _uiState = MutableStateFlow(value = PlaylistMakerUiState())
     val uiState: StateFlow<PlaylistMakerUiState> = _uiState.asStateFlow()
 }
