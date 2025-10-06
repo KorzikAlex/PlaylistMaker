@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.yandex.korzik.playlistmaker.ui.navigation.AppNavGraph
+import com.yandex.korzik.playlistmaker.ui.navigation.PlaylistHost
 import com.yandex.korzik.playlistmaker.ui.theme.PlaylistMakerTheme
 
 class MainActivity : ComponentActivity() {
@@ -13,7 +13,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             PlaylistMakerTheme {
-                AppNavGraph()
+                PlaylistHost()
             }
         }
     }

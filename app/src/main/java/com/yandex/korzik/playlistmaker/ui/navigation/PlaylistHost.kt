@@ -21,7 +21,7 @@ sealed class Screen(val route: String) {
 }
 
 @Composable
-fun AppNavGraph(
+fun PlaylistHost(
     navHostController: NavHostController = rememberNavController(),
     startDestination: Screen = Screen.Main
 ) {
