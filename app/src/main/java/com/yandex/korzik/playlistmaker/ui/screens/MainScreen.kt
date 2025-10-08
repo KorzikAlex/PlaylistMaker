@@ -43,7 +43,8 @@ fun MainScreen(
         topBar = {
             PlaylistMakerTopAppBar(
                 title = R.string.app_name,
-                colorTopBar = Color(color = 0xff3772e7)
+                colorTopBar = Color(color = 0xff3772e7),
+                colorTitle = Color.White,
             )
         },
         modifier = modifier.fillMaxSize()
@@ -57,6 +58,7 @@ fun MainScreen(
         )
     }
 }
+
 
 @Preview(showBackground = true, name = "MainScreen Preview", locale = "ru")
 @Composable

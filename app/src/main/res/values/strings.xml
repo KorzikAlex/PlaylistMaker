@@ -13,4 +13,9 @@
     <string name="support">support</string>
     <string name="back">back</string>
     <string name="next">next</string>
+    <string name="email">alek.korshkov@yandex.ru</string>
+    <string name="subject">Message to the developers and developers of the Playlist Maker app</string>
+    <string name="text_share">Check out this awesome app!</string>
+    <string name="user_agreement_url">https://yandex.ru/legal/praktikum_offer/07022019/</string>
+    <string name="body">Thanks to the developers and developers for the cool app!</string>
 </resources>

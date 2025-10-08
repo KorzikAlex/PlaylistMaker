@@ -1,39 +1,64 @@
 package com.yandex.korzik.playlistmaker.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.yandex.korzik.playlistmaker.R
 import com.yandex.korzik.playlistmaker.data.DefaultSettingsMenuRepository
-import com.yandex.korzik.playlistmaker.data.SettingsUiState
+import com.yandex.korzik.playlistmaker.data.MenuRepository
+import com.yandex.korzik.playlistmaker.data.SettingsMenuUiState
 import com.yandex.korzik.playlistmaker.model.MenuItemUi
+import com.yandex.korzik.playlistmaker.model.UiEvent
 import com.yandex.korzik.playlistmaker.ui.viewmodel.handlers.ActionHandler
 import com.yandex.korzik.playlistmaker.ui.viewmodel.handlers.ToggleHandler
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
 
 class SettingsViewModel : ViewModel(), MenuViewModel, ToggleHandler, ActionHandler {
-    private val _uiState: MutableStateFlow<SettingsUiState> =
-        MutableStateFlow(value = SettingsUiState())
-    override val uiState: StateFlow<SettingsUiState> = _uiState.asStateFlow()
+    private val _uiState: MutableStateFlow<SettingsMenuUiState> =
+        MutableStateFlow(value = SettingsMenuUiState())
+    override val uiState: StateFlow<SettingsMenuUiState> = this._uiState.asStateFlow()
 
-    val settingsMenuRepository = DefaultSettingsMenuRepository()
+    private val _events: MutableSharedFlow<UiEvent> = MutableSharedFlow()
+    val events: SharedFlow<UiEvent> = this._events.asSharedFlow()
+    override val menuRepository: MenuRepository = DefaultSettingsMenuRepository()
 
     init {
-        loadMenu()
+        this.loadMenu()
+    }
+
+    private fun sendEvent(event: UiEvent) {
+        this.viewModelScope.launch {
+            _events.emit(event)
+        }
     }
 
     override fun loadMenu() {
-        val settingsMenu: List<MenuItemUi> = settingsMenuRepository.getMenu()
-        _uiState.value = _uiState.value.copy(
+        val settingsMenu: List<MenuItemUi> = this.menuRepository.getMenu()
+        this._uiState.value = this._uiState.value.copy(
             menu = settingsMenu
         )
     }
 
     override fun refreshMenu(): Unit = loadMenu()
     override fun onToggleChanged(id: String, checked: Boolean) {
-        TODO("Not yet implemented")
     }
 
     override fun onActionClicked(id: String) {
-        TODO("Not yet implemented")
+        when (id) {
+            "share" -> sendEvent(UiEvent.OpenShare(R.string.text_share))
+            "support" -> sendEvent(
+                UiEvent.OpenMail(
+                    emailRes = R.string.email,
+                    subjectRes = R.string.subject,
+                    bodyRes = R.string.body
+                )
+            )
+            "user_agreement" -> sendEvent(UiEvent.OpenUrl(R.string.user_agreement_url))
+        }
     }
 }

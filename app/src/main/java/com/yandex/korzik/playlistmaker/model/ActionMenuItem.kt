@@ -11,7 +11,7 @@ data class ActionMenuItem(
     val icon: MenuIcon? = null,
 
     @param:StringRes
-    override val contentDescriptionRes: Int? = textRes,
+    override val contentDescriptionRes: Int? = null,
 
     val trailingIcon: MenuIcon? = null
 ) : MenuItemUi

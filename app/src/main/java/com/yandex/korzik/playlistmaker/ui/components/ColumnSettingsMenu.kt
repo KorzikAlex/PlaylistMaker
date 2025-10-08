@@ -1,7 +1,11 @@
 package com.yandex.korzik.playlistmaker.ui.components
 
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.yandex.korzik.playlistmaker.model.MenuItemUi
 
 @Composable
@@ -15,6 +19,9 @@ fun ColumnSettingsMenu(
         itemsList = settingsItemsList,
         modifier = modifier,
         onToggleChange = onToggleChange,
-        onActionClick = onActionClick
+        onActionClick = onActionClick,
+        fontSize = 20.sp,
+        iconSize = 24.dp,
+        fontWeight = FontWeight.Normal
     )
 }

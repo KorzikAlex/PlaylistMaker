@@ -14,4 +14,9 @@
     <string name="support">Написать в поддержку</string>
     <string name="back">Назад</string>
     <string name="next">Вперёд</string>
+    <string name="email">alek.korshkov@yandex.ru</string>
+    <string name="subject">Сообщение разработчикам и разработчицам приложения Playlist Maker</string>
+    <string name="text_share">Ознакомьтесь с этим потрясающим приложением!</string>
+    <string name="user_agreement_url">https://yandex.ru/legal/praktikum_offer/07022019/</string>
+    <string name="body">Спасибо разработчикам и разработчицам за крутое приложение!</string>
 </resources>
