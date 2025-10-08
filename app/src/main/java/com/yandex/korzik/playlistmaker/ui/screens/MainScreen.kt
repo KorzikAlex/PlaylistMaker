@@ -15,17 +15,17 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.yandex.korzik.playlistmaker.R
-import com.yandex.korzik.playlistmaker.data.PlaylistMakerUiState
+import com.yandex.korzik.playlistmaker.data.MainMenuUiState
 import com.yandex.korzik.playlistmaker.ui.components.ColumnMainMenu
 import com.yandex.korzik.playlistmaker.ui.components.PlaylistMakerTopAppBar
 import com.yandex.korzik.playlistmaker.ui.theme.PlaylistMakerTheme
-import com.yandex.korzik.playlistmaker.ui.viewmodel.PlaylistMakerViewModel
+import com.yandex.korzik.playlistmaker.ui.viewmodel.MainMenuViewModel
 
 @Composable
 fun MainScreen(
     navController: NavController,
     modifier: Modifier = Modifier,
-    viewModel: PlaylistMakerViewModel = viewModel(),
+    viewModel: MainMenuViewModel = viewModel(),
 ) {
     LaunchedEffect(key1 = Unit) {
         viewModel.navEvents.collect { id: String ->
@@ -38,7 +38,7 @@ fun MainScreen(
         }
     }
 
-    val playlistMakerUiState: PlaylistMakerUiState by viewModel.uiState.collectAsState()
+    val mainMenuUiState: MainMenuUiState by viewModel.uiState.collectAsState()
     Scaffold(
         topBar = {
             PlaylistMakerTopAppBar(
@@ -49,7 +49,7 @@ fun MainScreen(
         modifier = modifier.fillMaxSize()
     ) { innerPadding: PaddingValues ->
         ColumnMainMenu(
-            mainMenuItemsList = playlistMakerUiState.mainMenu,
+            mainMenuItemsList = mainMenuUiState.menu,
             onActionClick = { id: String ->
                 viewModel.onNavClicked(id)
             },

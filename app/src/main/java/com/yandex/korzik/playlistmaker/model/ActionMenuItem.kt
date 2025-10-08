@@ -8,7 +8,7 @@ data class ActionMenuItem(
     @param:StringRes
     override val textRes: Int,
 
-    override val icon: MenuIcon? = null,
+    val icon: MenuIcon? = null,
 
     @param:StringRes
     override val contentDescriptionRes: Int? = textRes,

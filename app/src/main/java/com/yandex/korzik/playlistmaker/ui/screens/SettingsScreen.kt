@@ -13,18 +13,18 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.yandex.korzik.playlistmaker.R
-import com.yandex.korzik.playlistmaker.data.PlaylistMakerUiState
+import com.yandex.korzik.playlistmaker.data.SettingsUiState
 import com.yandex.korzik.playlistmaker.ui.components.ColumnSettingsMenu
 import com.yandex.korzik.playlistmaker.ui.components.PlaylistMakerTopAppBar
-import com.yandex.korzik.playlistmaker.ui.viewmodel.PlaylistMakerViewModel
+import com.yandex.korzik.playlistmaker.ui.viewmodel.SettingsViewModel
 
 @Composable
 fun SettingsScreen(
     navController: NavController,
     modifier: Modifier = Modifier,
-    viewModel: PlaylistMakerViewModel = viewModel()
+    viewModel: SettingsViewModel = viewModel()
 ) {
-    val playlistMakerUiState: PlaylistMakerUiState by viewModel.uiState.collectAsState()
+    val settingsUiState: SettingsUiState by viewModel.uiState.collectAsState()
     Scaffold(
         topBar = {
             PlaylistMakerTopAppBar(
@@ -37,7 +37,7 @@ fun SettingsScreen(
     )
     { innerPadding: PaddingValues ->
         ColumnSettingsMenu(
-            settingsItemsList = playlistMakerUiState.settingsMenu,
+            settingsItemsList = settingsUiState.menu,
             onToggleChange = { id: String, checked: Boolean ->
                 viewModel.onToggleChanged(id, checked)
             },

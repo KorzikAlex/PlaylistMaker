@@ -1,6 +1,5 @@
 package com.yandex.korzik.playlistmaker.model
 
-import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 
 sealed interface MenuItemUi {
@@ -8,8 +7,6 @@ sealed interface MenuItemUi {
 
     @get:StringRes
     val textRes: Int
-
-    val icon: MenuIcon?
 
     @get:StringRes
     val contentDescriptionRes: Int?
