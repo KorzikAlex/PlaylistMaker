@@ -5,5 +5,5 @@ import androidx.compose.ui.graphics.vector.ImageVector
 
 sealed interface MenuIcon {
     data class Vector(val imageVector: ImageVector) : MenuIcon
-    data class Drawable(@DrawableRes val resourceId: Int) : MenuIcon
+    data class Drawable(@param:DrawableRes val resourceId: Int) : MenuIcon
 }
