@@ -1,7 +1,7 @@
 package com.yandex.korzik.playlistmaker.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.yandex.korzik.playlistmaker.data.SearchUiState
+import com.yandex.korzik.playlistmaker.data.dto.SearchUiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

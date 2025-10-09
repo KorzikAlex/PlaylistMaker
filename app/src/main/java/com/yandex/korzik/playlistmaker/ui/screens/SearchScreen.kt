@@ -23,7 +23,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.yandex.korzik.playlistmaker.R
-import com.yandex.korzik.playlistmaker.data.SearchUiState
+import com.yandex.korzik.playlistmaker.data.dto.SearchUiState
 import com.yandex.korzik.playlistmaker.ui.components.PlaylistMakerTopAppBar
 import com.yandex.korzik.playlistmaker.ui.components.SearchTextField
 import com.yandex.korzik.playlistmaker.ui.viewmodel.SearchViewModel

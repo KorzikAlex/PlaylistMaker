@@ -15,8 +15,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.yandex.korzik.playlistmaker.R
-import com.yandex.korzik.playlistmaker.data.MainMenuUiState
-import com.yandex.korzik.playlistmaker.ui.components.ColumnMainMenu
+import com.yandex.korzik.playlistmaker.data.dto.MainMenuUiState
+import com.yandex.korzik.playlistmaker.ui.components.columns.ColumnMainMenu
 import com.yandex.korzik.playlistmaker.ui.components.PlaylistMakerTopAppBar
 import com.yandex.korzik.playlistmaker.ui.theme.PlaylistMakerTheme
 import com.yandex.korzik.playlistmaker.ui.viewmodel.MainMenuViewModel

@@ -3,11 +3,11 @@ package com.yandex.korzik.playlistmaker.ui.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.yandex.korzik.playlistmaker.R
-import com.yandex.korzik.playlistmaker.data.DefaultSettingsMenuRepository
-import com.yandex.korzik.playlistmaker.data.MenuRepository
-import com.yandex.korzik.playlistmaker.data.SettingsMenuUiState
-import com.yandex.korzik.playlistmaker.model.MenuItemUi
-import com.yandex.korzik.playlistmaker.model.UiEvent
+import com.yandex.korzik.playlistmaker.domain.impl.DefaultSettingsMenuRepository
+import com.yandex.korzik.playlistmaker.domain.api.MenuRepository
+import com.yandex.korzik.playlistmaker.data.dto.SettingsMenuUiState
+import com.yandex.korzik.playlistmaker.domain.models.MenuItemUi
+import com.yandex.korzik.playlistmaker.domain.models.UiEvent
 import com.yandex.korzik.playlistmaker.ui.viewmodel.handlers.ActionHandler
 import com.yandex.korzik.playlistmaker.ui.viewmodel.handlers.ToggleHandler
 import kotlinx.coroutines.flow.MutableSharedFlow

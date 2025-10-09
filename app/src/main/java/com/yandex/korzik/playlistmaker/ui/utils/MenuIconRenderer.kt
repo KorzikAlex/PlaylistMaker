@@ -1,13 +1,10 @@
-package com.yandex.korzik.playlistmaker.utils
+package com.yandex.korzik.playlistmaker.ui.utils
 
-import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.dp
-import com.yandex.korzik.playlistmaker.model.MenuIcon
+import com.yandex.korzik.playlistmaker.domain.models.MenuIcon
 
 @Composable
 fun MenuIconRenderer(

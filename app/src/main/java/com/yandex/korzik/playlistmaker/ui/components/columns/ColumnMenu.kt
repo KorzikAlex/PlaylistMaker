@@ -1,4 +1,4 @@
-package com.yandex.korzik.playlistmaker.ui.components
+package com.yandex.korzik.playlistmaker.ui.components.columns
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -13,9 +13,12 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.yandex.korzik.playlistmaker.R
-import com.yandex.korzik.playlistmaker.model.ActionMenuItem
-import com.yandex.korzik.playlistmaker.model.MenuItemUi
-import com.yandex.korzik.playlistmaker.model.ToggleMenuItem
+import com.yandex.korzik.playlistmaker.domain.models.ActionMenuItem
+import com.yandex.korzik.playlistmaker.domain.models.MenuItemUi
+import com.yandex.korzik.playlistmaker.domain.models.ToggleMenuItem
+import com.yandex.korzik.playlistmaker.ui.components.rows.MenuRowAction
+import com.yandex.korzik.playlistmaker.ui.components.rows.MenuRowToggle
+import com.yandex.korzik.playlistmaker.ui.components.SimpleList
 
 @Composable
 fun ColumnMenu(

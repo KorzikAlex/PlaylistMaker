@@ -1,14 +1,15 @@
-package com.yandex.korzik.playlistmaker.data
+package com.yandex.korzik.playlistmaker.domain.impl
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowForwardIos
 import androidx.compose.material.icons.rounded.Share
 import androidx.compose.material.icons.rounded.SupportAgent
 import com.yandex.korzik.playlistmaker.R
-import com.yandex.korzik.playlistmaker.model.ActionMenuItem
-import com.yandex.korzik.playlistmaker.model.MenuIcon
-import com.yandex.korzik.playlistmaker.model.MenuItemUi
-import com.yandex.korzik.playlistmaker.model.ToggleMenuItem
+import com.yandex.korzik.playlistmaker.domain.api.MenuRepository
+import com.yandex.korzik.playlistmaker.domain.models.ActionMenuItem
+import com.yandex.korzik.playlistmaker.domain.models.MenuIcon
+import com.yandex.korzik.playlistmaker.domain.models.MenuItemUi
+import com.yandex.korzik.playlistmaker.domain.models.ToggleMenuItem
 
 interface SettingsMenuRepository : MenuRepository {
     override fun getMenu(): List<MenuItemUi>;

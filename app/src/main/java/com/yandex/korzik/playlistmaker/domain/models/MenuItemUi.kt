@@ -1,4 +1,4 @@
-package com.yandex.korzik.playlistmaker.model
+package com.yandex.korzik.playlistmaker.domain.models
 
 import androidx.annotation.StringRes
 

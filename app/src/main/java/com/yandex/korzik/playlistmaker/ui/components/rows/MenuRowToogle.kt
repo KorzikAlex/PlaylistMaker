@@ -1,7 +1,7 @@
-package com.yandex.korzik.playlistmaker.ui.components
+package com.yandex.korzik.playlistmaker.ui.components.rows
 
 import androidx.compose.foundation.layout.size
-import androidx.compose.material3.IconButton
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -11,17 +11,17 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.yandex.korzik.playlistmaker.model.ActionMenuItem
-import com.yandex.korzik.playlistmaker.utils.MenuIconRenderer
+import com.yandex.korzik.playlistmaker.domain.models.ToggleMenuItem
+import com.yandex.korzik.playlistmaker.ui.utils.MenuIconRenderer
 
 @Composable
-fun MenuRowAction(
-    item: ActionMenuItem,
+fun MenuRowToggle(
+    item: ToggleMenuItem,
     modifier: Modifier = Modifier,
     fontSize: TextUnit = 16.sp,
     fontWeight: FontWeight = FontWeight.Normal,
     iconSize: Dp = 24.dp,
-    onAction: () -> Unit
+    onCheckedChange: (Boolean) -> Unit
 ) {
     IconTextRow(
         icon = {
@@ -29,26 +29,17 @@ fun MenuRowAction(
         },
         title = {
             Text(
-                text = stringResource(
-                    id = item.textRes
-                ),
+                text = stringResource(id = item.textRes),
                 fontSize = fontSize,
                 fontWeight = fontWeight,
                 modifier = Modifier
             )
         },
         trailing = {
-            item.trailingIcon?.let {
-                IconButton(
-                    onClick = onAction,
-                    modifier = Modifier
-                ) {
-                    MenuIconRenderer(
-                        icon = it,
-                        modifier = Modifier.size(iconSize)
-                    )
-                }
-            }
+            Switch(
+                checked = item.checked,
+                onCheckedChange = onCheckedChange,
+            )
         },
         modifier = modifier
     )

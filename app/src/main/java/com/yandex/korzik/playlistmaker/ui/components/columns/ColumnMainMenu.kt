@@ -1,4 +1,4 @@
-package com.yandex.korzik.playlistmaker.ui.components
+package com.yandex.korzik.playlistmaker.ui.components.columns
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
@@ -6,22 +6,21 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.yandex.korzik.playlistmaker.model.MenuItemUi
+import com.yandex.korzik.playlistmaker.domain.models.MenuItemUi
 
 @Composable
-fun ColumnSettingsMenu(
-    settingsItemsList: List<MenuItemUi>,
+fun ColumnMainMenu(
+    mainMenuItemsList: List<MenuItemUi>,
     modifier: Modifier = Modifier,
-    onToggleChange: (String, Boolean) -> Unit = { _, _ -> },
     onActionClick: (String) -> Unit = {}
 ) {
     ColumnMenu(
-        itemsList = settingsItemsList,
+        itemsList = mainMenuItemsList,
         modifier = modifier,
-        onToggleChange = onToggleChange,
         onActionClick = onActionClick,
-        fontSize = 20.sp,
+        fontSize = 24.sp,
         iconSize = 24.dp,
-        fontWeight = FontWeight.Normal
+        shape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp),
+        fontWeight = FontWeight.Bold
     )
 }
